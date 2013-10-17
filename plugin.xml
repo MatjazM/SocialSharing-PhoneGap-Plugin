@@ -15,19 +15,16 @@
   <license>MIT</license>
 
   <engines>
-    <engine name="cordova" version="<3.0.0"/>
+    <engine name="cordova" version="&lt;3.0.0"/>
   </engines>
 
   <asset src="www/SocialSharing.js" target="js/plugins/SocialSharing.js"/>
 
   <!-- ios -->
   <platform name="ios">
-
-    <config-file target="config.xml" parent="/*">
-      <feature name="SocialSharing">
-        <param name="ios-package" value="SocialSharing"/>
-      </feature>
-    </config-file>
+    <config-file target="config.xml" parent="plugins">
+        <plugin name="SocialSharing" value="SocialSharing"/>
+    </config-file>  
 
     <header-file src="src/ios/SocialSharing.h"/>
     <source-file src="src/ios/SocialSharing.m"/>
@@ -35,11 +32,8 @@
 
   <!-- android -->
   <platform name="android">
-
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="SocialSharing">
-        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
-      </feature>
+    <config-file target="res/xml/config.xml" parent="plugins">
+        <plugin name="SocialSharing" value="nl.xservices.plugins.SocialSharing"/>
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
